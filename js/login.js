@@ -10,11 +10,12 @@ class Longin {
         var _this = this;
             $("#but").on("click",function(){
                 _this.init();
-                console.log(_this.fla);
               if(_this.fla){
-                    console.log(1);  
+                    alert("恭喜您登录成功");
+                    $(window).attr('location', 'http://localhost/19online/html/index.html');
+                    localStorage.setItem("loginok",0);
               }else{
-                  console.log(2);
+                  console.log("失败");
               }
             })
     }

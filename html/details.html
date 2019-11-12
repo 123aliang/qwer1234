@@ -37,7 +37,9 @@
                         <div class="magnifying-l">
                             <div class="lens-big">
                                 <div class="smell-lens">
+                                    <div class="huan-lens">
                                     <img src="http://i.19online.cn/picture/1519020141128162144.jpg" alt="">
+                                     </div>
                                     <div class="lens"></div>
                                 </div>
                                 <div class="big-lens"> <img src="http://i.19online.cn/picture/1519020141128162144.jpg"
@@ -46,9 +48,9 @@
                             <div class="spec-list">
                                 <button class="specleft specbut"></button>
                                 <ul>
-                                    <li><img src="http://i.19online.cn/picture/s_1831820191012150242.jpg" alt=""></li>
-                                    <li><img src="http://i.19online.cn/picture/s_1518920141128162117.jpg" alt=""></li>
-                                    <li><img src="http://i.19online.cn/picture/s_1519020141128162144.jpg" alt=""></li>
+                                    <li><img src="http://i.19online.cn/picture/1831820191012150242.jpg" alt=""></li>
+                                    <li><img src="http://i.19online.cn/picture/1518920141128162117.jpg" alt=""></li>
+                                    <li><img src="http://i.19online.cn/picture/1519020141128162144.jpg" alt=""></li>
                                 </ul>
                                 <button class="specright specbut"></button>
                             </div>
@@ -149,6 +151,19 @@
 <script src="../js/sans/jquery.js"></script>
 <script src="../js/common.js"></script>
 <script>
+
+    $(".spec-list").find("ul").children("li").hover(function(){
+          var str = $(this).html()
+          console.log(str);
+          
+        $(".huan-lens").html(str);
+        $(".big-lens").html(str)
+        
+        
+        // $(this).addClass("activeNews").siblings().removeClass();
+        // $(".newsding").children("div").eq($(this).index()).addClass("newsbox").siblings().removeClass();
+    })
+
     // 放大镜
     $(".smell-lens").hover(function (event) {
         $(".big-lens").show();
