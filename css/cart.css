@@ -1,0 +1,104 @@
+#cart{
+    width: 1150px;
+    height: auto;
+    overflow: hidden;
+    margin: 0px auto;
+    height:797px;
+    background: #0f0;
+}
+#cart .mycart{
+    width:100%;
+    overflow: hidden;
+    margin-bottom:10px;
+}
+#cart .mycart img:nth-child(1){
+    float: left;
+    display: block;
+}
+#cart .mycart img:nth-child(2){
+    float: right;
+    display: block;
+}
+#cart .cartlist{
+    width:100%;
+}
+#cart .cartlist table{
+    border: 1px solid #343434;
+}
+#cart .cartlist table thead{
+    background: url(../images/cart/sc03.jpg) repeat-x;
+    font: 14px/35px "酷黑软雅";
+    color:#383838;
+    text-align: center;
+}
+#cart .cartlist table thead td{
+    border-right:1px solid rgb(250, 250, 250);
+  
+}
+#cart .cartlist table thead td:last-child{
+    border-right:none;
+
+}
+#cart .cartlist table tbody td{
+    height:95px;
+}
+#cart .cartlist table tbody td:nth-child(1){
+    width:100px;
+}
+#cart .cartlist table tbody td:nth-child(2){
+    text-align: left;
+    width:359px;
+}
+#cart .cartlist table tbody td:nth-child(2) img{
+    width:56px;
+    height:68px;
+    padding: 13px 21px;
+}
+#cart .cartlist table tbody td:nth-child(2) a{
+    color:#730601;
+}
+#cart .cartlist table tbody td:nth-child(3){
+    width:130px;
+}
+#cart .cartlist table tbody td:nth-child(4){
+    width:100px;
+}
+#cart .cartlist table tbody td:nth-child(5){
+    width:200px;
+}
+#cart .cartlist table tbody td:nth-child(6){
+    width:100px;
+}
+#cart .cartlist table tbody td:nth-child(7){
+    width:145px;
+    border-right: none;
+}
+#cart .cartlist table tbody{
+    font: 14px/22px "酷黑软雅";
+    color:#383838;
+    text-align: center;
+}
+#cart .cartlist table tbody td:nth-child(5) button{
+    background: rgb(255, 173, 187);
+    border: 1px solid #690303;
+    height:20px;
+    cursor: pointer;
+}
+#cart .cartlist table tbody .num{
+    width:36px;
+    height:18px;
+    border: 1px solid #7e9eb7;
+    text-align: center;
+    outline:medium;
+    margin:0 5px;
+}
+#cart .cartlist table tbody tr{
+    border-bottom: 1px dashed rgb(211, 211, 211);
+}
+
+#cart .cartlist table tfoot .foots{ 
+    overflow: hidden;
+    background-color: #fff;
+    height: 104px;
+    background: url(../images/cart/sc16.jpg) repeat-x;
+}
