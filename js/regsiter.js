@@ -1,5 +1,8 @@
+
+
 class Regular {
     constructor() {
+        console.log(0)
         this.res1 = /^[a-zA-Z]{1}[a-zA-Z0-9]{5,9}$/;
         this.res2 = /^[1][0-9]{10}$/;
         this.res3 = /^\w{3,12}@\w{1,5}\.[a-z]{2,3}$/;
@@ -10,9 +13,11 @@ class Regular {
         this.t4 = 1;
         this.t5 = 1;
         this.load();
-        // this.but();
+        this.but();
     }
     load() {
+       
+
         this.init();
         this.tel();
         this.email();
@@ -21,6 +26,7 @@ class Regular {
         this.deal()
         this.but();
         this.load1();
+        
     }
     load1(){
         if($(window).load('http://localhost/19online/html/login.html')){
@@ -37,6 +43,7 @@ class Regular {
                     color: "#0f0",
                     fontSize: "16px",
                 });
+                
                _this.t1 = 0; 
             } else {
                 var str = "请输入以字母开头和5-10数字组成的名字";
@@ -146,7 +153,7 @@ class Regular {
         })
     }
     but() {
-        // console.log(this.t1);
+        // console.log(0);
         var _this = this;
         $("#buts").on("click", function () {
             _this.deal()
@@ -173,6 +180,7 @@ class Regular {
             }
 
         })
+        // console.log(1);
     }
 }
 new Regular;

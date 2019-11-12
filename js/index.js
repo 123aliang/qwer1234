@@ -1,3 +1,7 @@
+
+
+
+
 // 秒杀
 class Seckill{
     constructor(str) {
