@@ -116,7 +116,7 @@
     overflow: hidden;
     float: left;
     width: 730px;
-    height:421px;
+    height:500px;
     color: #cc0808;
 }
 #magnifying .magnifying-r .winename{
@@ -135,7 +135,7 @@
 }
 #magnifying .magnifying-r .winename  .zo1{
     color: rgb(200,51,65);
-    font:16px/28px "宋体";
+    font:14px/28px "宋体";
    font-weight: 700;
 }
 #magnifying .magnifying-r .winename h2{

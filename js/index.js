@@ -1,7 +1,59 @@
+"use strict"
+// 渲染
+class Rander{
+    constructor(){
+        this.init();
+    }
+    init(){
+        var _this = this;
+        $(document).ready(function(){
+            $.ajax({
+                url:"http://localhost/19online/json/shop.json",
+                // dataType:"jsonp",
+                beforeSend:function(){
+                    $('<img src="http://localhost/19online/images/details/jiazai.gif"  class="loding"/">').appendTo($(".seckill").find("ul").children("li"));
+                },
+                success:function(arr,b,c){
+                    // console.log(typeof a);
+                   $('.loding').remove();
+                    var str = "";
+                    for(var i=0;i < 5;i++){
+                        str += `<li id="${arr[i].goodsId}">
+                                    <a href="./details.html"><img src="${arr[i].htmlimg}"></a>
+                                    <a href="">
+                                        ${arr[i].name}</a>
+                                    <a href="">促销价：<span>${arr[i].price}.00/瓶</span></a>
+                                </li>`
+                    }
+                $(".seckill").find("ul").html(str);
+                    _this.cookie1();
+                },
+                error:function(a,b,c){
+                   $('.loding').remove();
+                //    alert("加载超时");
+                //    console.log(b);
+                //    console.log(c);
+                },
+                // timeout:5000
+            })
+        })
+    }
+    cookie1(){
+        $(".seckill").find("ul").children("li").on("click",function(){
+            localStorage.setItem("goodId",this.id)
+        })
+    }
+}
+new Rander;
 
-
-
-
+// class Biglens{
+//     constructor(){
+//         this.init()
+//     }
+//     init(){
+        
+//     }
+// }
 // 秒杀
 class Seckill{
     constructor(str) {
@@ -93,3 +145,10 @@ $(".none").hover(function(){
 },function(){
     $(".none").removeClass("nones")
 })
+
+// 渲染
+// class rander{
+//     constructor(){
+
+//     }
+// }

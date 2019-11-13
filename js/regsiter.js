@@ -1,4 +1,4 @@
-
+"use strict"
 
 class Regular {
     constructor() {
@@ -16,8 +16,6 @@ class Regular {
         this.but();
     }
     load() {
-       
-
         this.init();
         this.tel();
         this.email();
@@ -166,7 +164,6 @@ class Regular {
                     var str = JSON.stringify({"name":$("#usernamer").val(),"pass":$("#pass1").val()})
                     localStorage.setItem("logins",str);
                     $(".regsiterok").stop().show(1000);
-                    
                     var num = 3;
                     setInterval(function () {
                         $(".zhengzai").text(num);
@@ -178,7 +175,6 @@ class Regular {
                     $("#email").val("");
                 }
             }
-
         })
         // console.log(1);
     }
