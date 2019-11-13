@@ -1,8 +1,8 @@
 [{
-    "htmlimg":"http://i.19online.cn/picture/s_1831820191012150242.jpg",
-    "bigimg1":"http://i.19online.cn/picture/1831820191012150242.jpg",
-    "bigimg2":"http://i.19online.cn/picture/1518920141128162117.jpg",
-    "bigimg3":"http://i.19online.cn/picture/1519020141128162144.jpg",
+    "htmlimg":"http://localhost/19online/images/jsonimg/bl1.jpg",
+    "bigimg1":"http://localhost/19online/images/jsonimg/blbig1.jpg",
+    "bigimg2":"http://localhost/19online/images/jsonimg/blbig2.jpg",
+    "bigimg3":"http://localhost/19online/images/jsonimg/blbig3.jpg",
     "detsimg1":"http://www.19online.cn/UserUpFile/%E5%B8%83%E7%90%85%E5%85%84%E5%BC%9F4-864(1).jpg",
     "detsimg2":"http://www.19online.cn/UserUpFile/%E5%B8%83%E7%90%85%E5%85%84%E5%BC%9F2(1).jpg",
     "name":"布琅兄弟莫斯卡托甜白",

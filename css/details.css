@@ -182,13 +182,14 @@
 /* 数量加 */
 #magnifying .magnifying-r .but{
     width:20px;
-    height:20px;
+    height:18px;
     background: #DFDFDF;
     border: 1px solid #cc0808;
     outline: medium;
+    cursor: pointer;
 }   
 /* 数量 */
-#num{
+#numde{
     width: 30px;
     height:18px;
 }

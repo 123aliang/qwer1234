@@ -36,7 +36,7 @@ class List2{
     }
     cookies2(){
             $("#lists").find("ul").children("li").on("click",function(){
-                localStorage.setItem("goodId",this.id)
+                sessionStorage.setItem("goodId",this.id)
             })
     }
 }

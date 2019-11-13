@@ -3,8 +3,8 @@
     height: auto;
     overflow: hidden;
     margin: 0px auto;
-    height:797px;
-    background: #0f0;
+    /* height:797px; */
+    /* background: #0f0; */
 }
 #cart .mycart{
     width:100%;
@@ -23,7 +23,7 @@
     width:100%;
 }
 #cart .cartlist table{
-    border: 1px solid #343434;
+    border: 1px solid rgb(179, 174, 174);
 }
 #cart .cartlist table thead{
     background: url(../images/cart/sc03.jpg) repeat-x;
@@ -83,6 +83,7 @@
     border: 1px solid #690303;
     height:20px;
     cursor: pointer;
+    outline:medium;
 }
 #cart .cartlist table tbody .num{
     width:36px;
@@ -97,8 +98,59 @@
 }
 
 #cart .cartlist table tfoot .foots{ 
+    border-top:1px solid rgb(179, 174, 174);
     overflow: hidden;
     background-color: #fff;
     height: 104px;
     background: url(../images/cart/sc16.jpg) repeat-x;
+}
+#cart .cartlist table tfoot .foots .foots-r{
+    float: right;
+    margin-left: 100px;
+    width:230px;
+}
+#cart .cartlist table tfoot .foots  .qwer{
+    display: block;
+    width:230px;
+    font:12px/20px "酷黑软雅";
+}
+#cart .cartlist table tfoot .foots  .qwer i{
+    color: #f11515
+}
+#cart .cartlist table tfoot .foots .bubao{
+    font-weight:700; 
+    font:12px/20px "酷黑软雅";
+}
+#cart .cartlist table tfoot .foots .tatol{
+    font-weight:700; 
+    font:18px/22px "酷黑软雅";
+}
+
+
+#cart .jiesuan{
+    margin-top:20px;
+    width:100%;
+    overflow: hidden;
+}
+#cart .jiesuan .carry{
+    float: left;
+    width:200px;
+    font: 16px/40px "酷黑软雅";
+    background: #deeefa;
+    outline: medium;
+    border-radius: 10px;
+    border:1px solid #f5e7e7; 
+    cursor:pointer;
+}
+#cart .jiesuan .balance{
+    outline: medium;
+    cursor:pointer;
+    border-radius: 10px;
+    margin-right: 50px;
+    float: right;
+    width:200px;
+    font: 16px/40px "酷黑软雅";
+    border:1px solid #64b6f5; 
+    background: #f12121;
+    color:#fff;
 }

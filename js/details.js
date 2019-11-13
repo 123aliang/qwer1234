@@ -3,13 +3,15 @@
 
 class Randerbig {
     constructor() {
+        this.num = 0;
         this.init();
     }
     init() {
         var _this = this;
         $(document).ready(function () {
             _this.ajax1();
-            _this.id = localStorage.getItem("goodId");
+            _this.id = sessionStorage.getItem("goodId");
+            _this.logs2 = JSON.parse(sessionStorage.getItem("goodId"));
         })
     }
     // 请求数据
@@ -58,7 +60,7 @@ class Randerbig {
                                            <span> 产品图片及介绍说明仅供参考，一切以发货实物为准！</span>
                                        </div>
                                    </div>
-                                   <div class="magnifying-r">
+                                   <div class="magnifying-r" id="${arr[i].goodsId}">
                                        <div class="winename">
                                            <h1>${arr[i].name} &nbsp; <span class="zo1">${arr[i].name2}</span></h1>
                                            <h2>Brown Brothers Moscato (Semi Sweet)</h2>
@@ -78,7 +80,7 @@ class Randerbig {
                                        <div class="quantity">
                                            <span>数量</span>
                                            <button id="subtract" class="but">-</button>
-                                           <input type="text" id="num" value="1">
+                                           <input type="text" id="numde" value="1">
                                            <button id="plus" class="but">+</button>
                                        </div>
                                        <div>
@@ -138,6 +140,7 @@ class Randerbig {
                 }
                 $("#details").html(str);
                 _this.biglens();
+                _this.jionCar();
             }
         })
     }
@@ -146,7 +149,7 @@ class Randerbig {
         // 放大镜
         $(".spec-list").find("ul").children("li").hover(function () {
             var str = $(this).html()
-            console.log(str);
+            // console.log(str);
 
             $(".huan-lens").html(str);
             $(".big-lens").html(str)
@@ -155,7 +158,6 @@ class Randerbig {
             // $(this).addClass("activeNews").siblings().removeClass();
             // $(".newsding").children("div").eq($(this).index()).addClass("newsbox").siblings().removeClass();
         })
-
         // 放大镜
         $(".smell-lens").hover(function (event) {
             $(".big-lens").show();
@@ -203,7 +205,109 @@ class Randerbig {
             $(".big-lens").hide();
             $(".lens").hide();
         })
+    }
+    jionCar() {
+        this.leftbut()
+        this.blour()
+        // this.rightbut()
+        // this.addbut()
+    }
+    blour() {
+        var _this = this;
+        $("#numde").on("input", function () {
+            var res = /^\d+$/;
+            if ($("#numde").val() === "") {
+                alert("数量不能为空");
+                $("#numde").val("1");
+            } else if (!res.test($("#numde").val())) {
+                alert("数量必须为数字")
+                parseInt($("#numde").val("1"));
+            } else if (res.test($("#numde").val()) && $("#numde").val() >= 99) {
+                alert("请理性消费数量控制在99以下")
+                $("#numde").val("99");
+                _this.num = $("#numde").val();
+            }
+        })
+    }
+    // 点击左右按钮；还有立即购买；加入购入车
+    leftbut() {
+        var _this = this;
+        this.num = $("#numde").val();
+        $(".magnifying-r").on("click", function (event) {
+            var logs1 = localStorage.getItem("loginok");
 
+            //    console.log(logs2); 
+            // 左按钮
+            if (event.target === $("#subtract").get(0)) {
+                _this.num--;
+                if (_this.num <= 1) {
+                    _this.num = 1;
+                    alert("最少要有一件商品")
+                }
+                $("#numde").val(_this.num);
+                // 右按钮
+            } else if (event.target === $("#plus").get(0)) {
+                _this.num++;
+                if (_this.num > 99) {
+                    _this.num = 99;
+                    alert("请停止您的剁手行为")
+                }
+                $("#numde").val(_this.num);
+            }
+            // 立即购买
+            if (event.target === $("#promptly").get(0)) {
+                if (logs1 == 0) {
+                    alert("此功能正在开发中");
+                } else {
+                    alert("请先登录");
+                }
+            }
+            // 加入购物车
+            if (event.target === $("#car").get(0)) {
+                if (logs1 == 0) {
+                    _this.addbut()
+                    // var obj = [{"id":this.logs2,"nums":this.num}]
+                    // console.log(obj);
+
+                    // var obj1 = JSON.stringify(obj)
+                    // console.log(obj1);
+                } else {
+                    alert("请先登录");
+                }
+            }
+        })
+    }
+    addbut() {
+        var arr = localStorage.getItem("addcar") ? JSON.parse(localStorage.getItem("addcar")) : [];
+        // console.log(arr);
+        // console.log(this.logs2);
+
+        if (arr.length === 0) {
+            arr.push({
+                id: this.logs2,
+                nums: this.num
+            })
+            // console.log(arr);
+        } else {
+            var t1 = 1;
+            for (var i = 0; i < arr.length; i++) {
+                if (arr[i].id == this.logs2) {
+                    // console.log(this.logs2);
+                    // console.log(arr[i].id);
+                    var butnum = parseInt(this.num);
+                    var kienum = parseInt(arr[i].nums);
+                    arr[i].nums = butnum + kienum
+                    t1 = 0;
+                }
+            }
+            if (t1 == 1) {
+                arr.push({
+                    id: this.logs2,
+                    nums: this.num
+                })
+            }
+        }
+        localStorage.setItem("addcar", JSON.stringify(arr));
     }
 }
 new Randerbig;

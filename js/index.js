@@ -40,7 +40,7 @@ class Rander{
     }
     cookie1(){
         $(".seckill").find("ul").children("li").on("click",function(){
-            localStorage.setItem("goodId",this.id)
+            sessionStorage.setItem("goodId",this.id)
         })
     }
 }
