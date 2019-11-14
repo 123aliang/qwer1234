@@ -66,7 +66,7 @@ class Randerbig {
                                    <div class="magnifying-r" id="${arr[i].goodsId}">
                                        <div class="winename">
                                            <h1>${arr[i].name} &nbsp; <span class="zo1">${arr[i].name2}</span></h1>
-                                           <h2>Brown Brothers Moscato (Semi Sweet)</h2>
+                                           <h2>${arr[i].name3}</h2>
                                        </div>
                                        <div class="cost">
                                            <p>
