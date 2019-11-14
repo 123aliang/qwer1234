@@ -257,7 +257,7 @@ class Randerbig {
             // 立即购买
             if (event.target === $("#promptly").get(0)) {
                 if (logs1 == 0) {
-                    alert("此功能正在开发中");
+                    $(window).attr('location', 'http://localhost/19online/html/cart.html');
                 } else {
                     alert("请先登录");
                 }

@@ -24,13 +24,13 @@ class Regular {
         this.deal()
         this.but();
         this.load1();
-        
+
     }
-    load1(){
-        if($(window).load('http://localhost/19online/html/login.html')){
+    load1() {
+        if ($(window).load('http://localhost/19online/html/login.html')) {
             $("#usernamer").val("");
         }
-        
+
     }
     // 用户名
     init() {
@@ -41,8 +41,8 @@ class Regular {
                     color: "#0f0",
                     fontSize: "16px",
                 });
-                
-               _this.t1 = 0; 
+
+                _this.t1 = 0;
             } else {
                 var str = "请输入以字母开头和5-10数字组成的名字";
                 $(".tishi").text(str).css({
@@ -126,7 +126,7 @@ class Regular {
                 $(".pass22").text("✔").css({
                     color: "#0f0",
                     fontSize: "16px",
-                });
+                })
                 _this.t5 = 0;
 
             } else {
@@ -161,8 +161,8 @@ class Regular {
                         fontSize: "16px",
                     })
                 } else {
-                    var str = JSON.stringify({"name":$("#usernamer").val(),"pass":$("#pass1").val()})
-                    localStorage.setItem("logins",str);
+                    var str = JSON.stringify({ "name": $("#usernamer").val(), "pass": $("#pass1").val() })
+                    localStorage.setItem("logins", str);
                     $(".regsiterok").stop().show(1000);
                     var num = 3;
                     setInterval(function () {

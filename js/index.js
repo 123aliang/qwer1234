@@ -1,23 +1,23 @@
 "use strict"
 // 渲染
-class Rander{
-    constructor(){
+class Rander {
+    constructor() {
         this.init();
     }
-    init(){
+    init() {
         var _this = this;
-        $(document).ready(function(){
+        $(document).ready(function () {
             $.ajax({
-                url:"http://localhost/19online/json/shop.json",
+                url: "http://localhost/19online/json/shop.json",
                 // dataType:"jsonp",
-                beforeSend:function(){
-                    $('<img src="http://localhost/19online/images/details/jiazai.gif"  class="loding"/">').appendTo($(".seckill").find("ul").children("li"));
-                },
-                success:function(arr,b,c){
+                // beforeSend:function(){
+                //     $('<img src="http://localhost/19online/images/details/jiazai.gif"  class="loding"/">').appendTo($(".seckill").find("ul").children("li"));
+                // },
+                success: function (arr, b, c) {
                     // console.log(typeof a);
-                   $('.loding').remove();
+                    $('.loding').remove();
                     var str = "";
-                    for(var i=0;i < 5;i++){
+                    for (var i = 0; i < 5; i++) {
                         str += `<li id="${arr[i].goodsId}">
                                     <a href="./details.html"><img src="${arr[i].htmlimg}"></a>
                                     <a href="">
@@ -25,53 +25,44 @@ class Rander{
                                     <a href="">促销价：<span>${arr[i].price}.00/瓶</span></a>
                                 </li>`
                     }
-                $(".seckill").find("ul").html(str);
+                    $(".seckill").find("ul").html(str);
                     _this.cookie1();
                 },
-                error:function(a,b,c){
-                   $('.loding').remove();
-                //    alert("加载超时");
-                //    console.log(b);
-                //    console.log(c);
+                error: function (a, b, c) {
+                    $('.loding').remove();
+                    //    alert("加载超时");
+                    //    console.log(b);
+                    //    console.log(c);
                 },
                 // timeout:5000
             })
         })
     }
-    cookie1(){
-        $(".seckill").find("ul").children("li").on("click",function(){
-            sessionStorage.setItem("goodId",this.id)
+    cookie1() {
+        $(".seckill").find("ul").children("li").on("click", function () {
+            sessionStorage.setItem("goodId", this.id)
         })
     }
 }
 new Rander;
-
-// class Biglens{
-//     constructor(){
-//         this.init()
-//     }
-//     init(){
-        
-//     }
-// }
 // 秒杀
-class Seckill{
+class Seckill {
     constructor(str) {
-        
+
         this.str = str;
         this.init();
     }
     init() {
-       this.time();
+        this.time();
     }
-    time(){
+    time() {
         this.future = new Date(this.str);
         this.now = new Date();
         this.time = this.future - this.now;
-        this.day = parseInt(this.time / 1000/60 / 60 / 60 % 24);
+        this.day = parseInt(this.time / 1000 / 60 / 60 / 60 % 24);
         this.hour = parseInt(this.time / 1000 / 60 / 60 % 24);
-        this.minute = parseInt(this.time  / 1000 / 60 % 60);
-        this.seconds = parseInt(this.time  / 1000 % 60);
+        this.minute = parseInt(this.time / 1000 / 60 % 60);
+        this.seconds = parseInt(this.time / 1000 % 60);
         this.msec = parseInt(this.time % 60);
         // console.log(this.seconds)
         if (this.hour < 10) {
@@ -91,32 +82,32 @@ class Seckill{
         }
         this.load();
     }
-    load(){
+    load() {
         $(".hour").text(this.day);
-        $(".minute").text( this.hour);
+        $(".minute").text(this.hour);
         $(".second").text(this.minute);
         $(".msec").text(this.seconds);
 
         // $(".msec").text(this.msec);
     }
-  
+
 }
-setInterval(function(){
+setInterval(function () {
     new Seckill("2019-11-20 15:40:00");
-},1000);
+}, 1000);
 // 二级菜单
-(function(){
+(function () {
     for (let i = 1; i <= $(".left-nav").children().length; i++) {
         $(`.wine${i}`).hover(function () {
             $(`.wine${i}`).css({
-                background:"#fff",
+                background: "#fff",
             }).children(`.wine1none${i}`).css({
                 display: "block",
-                zIndex:100,
+                zIndex: 100,
             });
-        },function(){
+        }, function () {
             $(`.wine${i}`).css({
-                background:"none",
+                background: "none",
             }).children(`.wine1none${i}`).css({
                 display: "none",
             });
@@ -126,29 +117,22 @@ setInterval(function(){
 
 // 选项卡
 
-    $(".news").find("ul").children("li").hover(function(){
-        $(this).addClass("activeNews").siblings().removeClass();
-        $(".newsding").children("div").eq($(this).index()).addClass("newsbox").siblings().removeClass();
-    })
-    
+$(".news").find("ul").children("li").hover(function () {
+    $(this).addClass("activeNews").siblings().removeClass();
+    $(".newsding").children("div").eq($(this).index()).addClass("newsbox").siblings().removeClass();
+})
+
 // 搜索框清空
-$(".search").children(".searchTxt").focus(function(){
+$(".search").children(".searchTxt").focus(function () {
     $(".search").children(".searchTxt").val("");
 })
 
 // 每周特惠
-$(".none").hover(function(){
-    if($(this).hasClass(".nones") == false){
-         $(".none").addClass("nones")
+$(".none").hover(function () {
+    if ($(this).hasClass(".nones") == false) {
+        $(".none").addClass("nones")
         $(this).removeClass("nones")
     }
-},function(){
+}, function () {
     $(".none").removeClass("nones")
 })
-
-// 渲染
-// class rander{
-//     constructor(){
-
-//     }
-// }

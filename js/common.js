@@ -1,14 +1,16 @@
 $("#header").load("http://localhost/19online/html/common.html .header", function () {
     class Logining {
         constructor() {
-            this.logins = localStorage.getItem("loginok");
-            this.option = localStorage.getItem("logins");
+            this.logins = localStorage.getItem("loginok")?JSON.parse(localStorage.getItem("loginok")) : []; 
+            this.option = localStorage.getItem("logins") ?JSON.parse(localStorage.getItem("logins")) : []; 
+            this.carnum = 0;
             this.init();
             this.quiting();
+            
         }
         init() {
             // var this = this;
-            if (this.logins == 0) {
+            if (this.logins === 0) {
                 // console.log( $(".logining"));
                 $(".logining").text("欢迎  " + this.option.name).css({
                     color: "#08d3f7",
@@ -17,6 +19,13 @@ $("#header").load("http://localhost/19online/html/common.html .header", function
                     color: "#920505",
                     cursor: "pointer",
                 });
+                this.addcar1 = localStorage.getItem("addcar")? JSON.parse(localStorage.getItem("addcar")) : [];
+                for(var i = 0;i < this.addcar1.length;i++){
+                    this.carnum += this.addcar1[i].nums; 
+                }
+                $("#carnum").text(this.carnum);
+            }else{
+                $("#carnum").text(0);
             }
         }
         quiting(){
