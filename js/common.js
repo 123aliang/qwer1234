@@ -1,3 +1,4 @@
+"use strict"
 $("#header").load("http://localhost/19online/html/common.html .header", function () {
     class Logining {
         constructor() {
@@ -8,6 +9,7 @@ $("#header").load("http://localhost/19online/html/common.html .header", function
             this.quiting();
             
         }
+        // 判断登录状态
         init() {
             // var this = this;
             if (this.logins === 0) {
@@ -24,10 +26,9 @@ $("#header").load("http://localhost/19online/html/common.html .header", function
                     this.carnum += this.addcar1[i].nums; 
                 }
                 $("#carnum").text(this.carnum);
-            }else{
-                $("#carnum").text(0);
             }
         }
+        // 用户退出状态
         quiting(){
             var _this = this;
             $(".regsiter").on("click",function(){

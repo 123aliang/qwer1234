@@ -1,10 +1,16 @@
 "use strict"
+// 购物车
 class Cart {
     constructor() {
         this.obj = localStorage.getItem("addcar") ? JSON.parse(localStorage.getItem("addcar")) : [];
+        // 加减按钮信号量
         this.count = 0;
+        // 购物车件数信号量
+        this.carnum1 = 0;
         this.init();
+        this.balance();
     }
+    // 初始化
     init() {
         var _this = this;
         $(document).ready(function () {
@@ -31,7 +37,7 @@ class Cart {
                                         </td>
                                         <td>
                                             <img src="${arr[i].htmlimg}" alt="">
-                                            <a href="./details.html"><span>${arr[i].name}</span></a>
+                                            <a href="./details.html" ><span index="${arr[i].goodsId}" class="liser">${arr[i].name}</span></a>
                                         </td>
                                         <td>${arr[i].price}.00</td>
                                         <td>${arr[i].Integral}</td>
@@ -55,29 +61,12 @@ class Cart {
             var e = e || event;
             //被点击的那一行tr
             _this.terui = e.target.parentNode.parentNode;
-            _this.ids = _this.terui.children[6].children[0].id;
-            
-            // console.log($(e.target).get(0))
-            // if(e.target.className === "subtract1"){
-            //     console.log(e.target);
 
-            //     this.terui.children[4].children[1].value--;
-            //         if(this.terui.children[4].children[1].value < 1){
-            //             alert("商品最少为1件");
-            //             this.terui.children[4].children[1].value = 1;
-            //         }
-            //         this.terui.children[5]
-            // }
-            // if(e.target.className === "plus1"){
-            //     this.terui.children[4].children[1].value++;
-            //     if(this.terui.children[4].children[1].value > 99){
-            //         alert("商品最多为99件");
-            //         this.terui.children[4].children[1].value = 99;
-            //     }
-            // }
+
+            // console.log(_this.terui.children[6].children[0].id);
+
             // 数量加
             _this.sda(e);
-            
             // 总数量
             if (e.target.className === "checkboxzi") {
                 if ($(e.target).get(0).checked === true) {
@@ -90,10 +79,19 @@ class Cart {
             }
             // 删除
             _this.delete(e);
-            // 数量
-            // _this.amount();
+            // 跳转详情页
+            _this.Jump(e);
         })
     }
+    // 跳转详情页
+    Jump(e) {
+        if (e.target.className === "liser") {
+            this.ids = $(e.target).attr("index");
+
+            sessionStorage.setItem("goodId", this.ids);
+        }
+    }
+    // 全选/反选
     checkbox1() {
         var _this = this;
         $(".checkboxs").on("click", function () {
@@ -111,84 +109,90 @@ class Cart {
             $(".tatol").get(0).innerText = "￥" + _this.count + ".00";
         })
     }
-    // 
-    // amount(){
-    //     this.tt = false;
-    //     $("#")
-    //     for(var i = 0;i < $(".checkboxzi").length;i++){
-            
-    //     }   
-    //     console.log(this.tt);
-        
-    //     if(!this.tt){
-    //         $(".checkboxs").get(0).checked = true;
-    //     }
-    // }
     // 按钮
     sda(e) {
-        // 数量减
-        if (e.target.className === "subtract1") {
-            // 如果被选中时
-            if (this.terui.children[0].children[0].checked === true) {
-                if (this.count == this.terui.children[2].innerText.slice(1)) {
-                    this.count == this.terui.children[2].innerText.slice(1)
-                } else {
-                    this.count -= this.terui.children[2].innerText.slice(1);
+        if (e.target.className === "subtract1" || e.target.className === "plus1") {
+            // 数量减
+            if (e.target.className === "subtract1") {
+                // 如果被选中时
+                if (this.terui.children[0].children[0].checked === true) {
+                    if (this.count == this.terui.children[2].innerText.slice(1)) {
+                        this.count == this.terui.children[2].innerText.slice(1)
+                    } else {
+                        this.count -= this.terui.children[2].innerText.slice(1);
+                    }
+                    $(".tatol").get(0).innerText = "￥" + this.count + ".00";
                 }
-                $(".tatol").get(0).innerText = "￥" + this.count + ".00";
+                // 正常点击加减
+                if ($(e.target).next().val() <= 1) {
+                    alert("商品最少为1件");
+                    $(e.target).next().val("2");
+                }
+                this.nums1 = parseInt($(e.target).next().val()) - 1
+                $(e.target).next().val(this.nums1)
+                this.amount(e, this.nums1);
             }
-            // 正常点击加减
-           this.nums1 = parseInt($(e.target).next().val()) - 1 
-           $(e.target).next().val(this.nums1)
-            if ($(e.target).next().val() < 1) {
-                alert("商品最少为1件");
-                $(e.target).next().val("1");
-            }
-            
-            this.amount(e,this.nums1)
-        }
-        // 数量加
-        if (e.target.className === "plus1") {
-            // 复选框被选中时
-            if (this.terui.children[0].children[0].checked === true) {
-                // if (this.count <= 99 * this.terui.children[2].innerText.slice(1)) {
-                //     this.count =  this.terui.children[2].innerText.slice(1)
-                // } else {
+            // 数量加
+            if (e.target.className === "plus1") {
+                // 复选框被选中时
+                if (this.terui.children[0].children[0].checked === true) {
+                    // if (this.count <= 99 * this.terui.children[2].innerText.slice(1)) {
+                    //     this.count =  this.terui.children[2].innerText.slice(1)
+                    // } else {
                     this.count += (1 * this.terui.children[2].innerText.slice(1));
-                // }
-                $(".tatol").get(0).innerText = "￥" + this.count + ".00";
+                    // }
+                    $(".tatol").get(0).innerText = "￥" + this.count + ".00";
+                }
+                // 正常累加
+                this.nums2 = parseInt($(e.target).prev().val()) + 1;
+                $(e.target).prev().val(this.nums2);
+                if ($(e.target).prev().val() > 99) {
+                    alert("商品最多为99件");
+                    $(e.target).prev().val("99");
+                }
+                this.amount(e, this.nums2)
             }
-            // 正常累加
-            this.nums2 = parseInt($(e.target).prev().val()) + 1;
-            $(e.target).prev().val(this.nums2);
-            if ($(e.target).prev().val() > 99) {
-                alert("商品最多为99件");
-                $(e.target).prev().val("99");
+            // 加减后购物车的件数
+            this.carnum1 = 0
+            for (var i = 0; i < this.obj.length; i++) {
+                this.carnum1 += this.obj[i].nums;
             }
-            this.amount(e,this.nums2)
+            $("#carnum").text(this.carnum1);
+            var str = "￥" + this.terui.children[4].children[1].value * (this.terui.children[2].innerText.slice(1)) + ".00";
+            this.terui.children[5].innerText = str ? str : "";
         }
-        this.terui.children[5].innerText = "￥" + this.terui.children[4].children[1].value * (this.terui.children[2].innerText.slice(1)) + ".00";
     }
     // 删除商品
-    delete(e){
-        if(e.target.className === "delete"){
-            for(var i = 0;i < this.obj.length;i++){
-                if(this.obj[i].id == e.target.id ){
+    delete(e) {
+        if (e.target.className === "delete") {
+            for (var i = 0; i < this.obj.length; i++) {
+                if (this.obj[i].id == e.target.id) {
                     e.target.parentNode.parentNode.remove();
-                    this.obj.splice(i,1);
+                    this.obj.splice(i, 1);
                 }
             }
-            localStorage.setItem("addcar",JSON.stringify(this.obj));
+            localStorage.setItem("addcar", JSON.stringify(this.obj));
         }
     }
     // 设置加减后的cookie
-    amount(e,numqwer){        
-            for(var i = 0;i < this.obj.length;i++){
-                if(this.obj[i].id == this.ids ){
-                    this.obj[i].nums = numqwer;
-                }
+    amount(e, numqwer) {
+        this.ids = this.terui.children[6].children[0].id;
+        for (var i = 0; i < this.obj.length; i++) {
+            if (this.obj[i].id == this.ids) {
+                this.obj[i].nums = numqwer;
             }
-            localStorage.setItem("addcar",JSON.stringify(this.obj));
+        }
+        localStorage.setItem("addcar", JSON.stringify(this.obj));
+    }
+    balance(){
+        $(".balance").on("click",function(){
+            var logs1 = localStorage.getItem("loginok");
+            if (logs1 == 0) {
+                alert("此功能在开发中")
+            } else {
+                alert("请先登录");
+            }
+        })
     }
 }
 new Cart();

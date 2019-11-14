@@ -1,11 +1,14 @@
 "use strict"
-// 
-
+// 计入购物车
 class Randerbig {
     constructor() {
+        // 加入购物车信号量
         this.num = 0;
+        // 购物车件数信号量
+        this.carnum2 = 0;
         this.init();
     }
+    // 初始化
     init() {
         var _this = this;
         $(document).ready(function () {
@@ -206,12 +209,14 @@ class Randerbig {
             $(".lens").hide();
         })
     }
+    // 加入购物车
     jionCar() {
         this.leftbut()
         this.blour()
         // this.rightbut()
         // this.addbut()
     }
+    // 数量验证
     blour() {
         var _this = this;
         $("#numde").on("input", function () {
@@ -265,18 +270,26 @@ class Randerbig {
             // 加入购物车
             if (event.target === $("#car").get(0)) {
                 if (logs1 == 0) {
+                    alert("加入购物车成功")
                     _this.addbut()
                     // var obj = [{"id":this.logs2,"nums":this.num}]
                     // console.log(obj);
-
                     // var obj1 = JSON.stringify(obj)
                     // console.log(obj1);
+                    // 购物车件数
+                    this.addcar1 = localStorage.getItem("addcar") ? JSON.parse(localStorage.getItem("addcar")) : [];
+                    this.carnum2 = 0;
+                    for (var i = 0; i < this.addcar1.length; i++) {
+                        this.carnum2 += this.addcar1[i].nums;
+                    }
+                    $("#carnum").text(this.carnum2);
                 } else {
                     alert("请先登录");
                 }
             }
         })
     }
+    // 判断加入购物车的产品
     addbut() {
         var arr = localStorage.getItem("addcar") ? JSON.parse(localStorage.getItem("addcar")) : [];
         // console.log(arr);
