@@ -51,6 +51,7 @@ class Cart {
                 $("#tbody1").html(str);
                 _this.incident();
                 _this.checkbox1();
+                _this.checkboxnum();
             }
         })
     }
@@ -61,10 +62,6 @@ class Cart {
             var e = e || event;
             //被点击的那一行tr
             _this.terui = e.target.parentNode.parentNode;
-
-
-            // console.log(_this.terui.children[6].children[0].id);
-
             // 数量加
             _this.sda(e);
             // 总数量
@@ -82,6 +79,21 @@ class Cart {
             // 跳转详情页
             _this.Jump(e);
         })
+    }
+    // 当选择全部选上之后 全选勾上
+    checkboxnum() {
+        var  arr=[];
+            $(".checkboxzi").on("click",function(){
+                for (var i = 0; i < $(".checkboxzi").length; i++) {
+                    arr.push($(".checkboxzi").get(i))
+                  }
+                var tt = (arr.every(function(ele){
+                      return ele.checked
+                  }))
+                  if (tt) {
+                      $(".checkboxs").get(0).checked = true;
+                  }
+            })
     }
     // 跳转详情页
     Jump(e) {
@@ -144,7 +156,7 @@ class Cart {
                     $(".tatol").get(0).innerText = "￥" + this.count + ".00";
                 }
                 // 正常累加
-              
+
                 if ($(e.target).prev().val() >= 99) {
                     alert("商品最多为99件");
                     $(e.target).prev().val("99");
@@ -156,7 +168,7 @@ class Cart {
             // 加减后购物车的件数
             this.carnum1 = 0
             for (var i = 0; i < this.obj.length; i++) {
-                
+
                 this.carnum1 = parseInt(this.carnum1) + parseInt(this.obj[i].nums);
             }
             $("#carnum").text(this.carnum1);
@@ -187,8 +199,8 @@ class Cart {
         }
         localStorage.setItem("addcar", JSON.stringify(this.obj));
     }
-    balance(){
-        $(".balance").on("click",function(){
+    balance() {
+        $(".balance").on("click", function () {
             var logs1 = localStorage.getItem("loginok");
             if (logs1 == 0) {
                 alert("此功能在开发中")
