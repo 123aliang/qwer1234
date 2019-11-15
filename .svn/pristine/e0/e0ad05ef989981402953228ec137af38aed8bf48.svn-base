@@ -1,0 +1,58 @@
+@charset "UTF-8";
+#lectWine {
+  overflow: hidden;
+  margin-top: 10px; }
+  #lectWine .classify {
+  margin-top: 10px;
+  width: 223px;
+  border: 1px solid #dbdbdb;
+   border-top: 2px solid #730301;
+  float: left; }
+    #lectWine .classify ul {
+      width: 100%; }
+      #lectWine .classify ul li {
+        width: 100%;
+        font: 13px/28px "宋体";
+        font-weight: 700;
+        background: #fbfbfb;
+        border-bottom: 1px solid #e8e8e8;
+        text-indent: 10px; }
+        #lectWine .classify ul li a {
+          color: #333; }
+          #lectWine .classify ul li a:hover {
+            color: red; }
+  #lectWine .list {
+    width: 920px;
+    margin-left: 5px;
+    float: left; }
+
+/* 商品 */
+#lists {
+  width: 910px;
+  overflow: hidden; }
+  #lists ul li {
+    float: left;
+    text-align: left;
+    font: 12px/18px "宋体";
+    color: #444;
+    margin-top: 10px;
+    padding: 12px 0 0 14px;
+    width: 166PX;
+    height: 259PX;
+    border-bottom: 1px dashed #ccc;
+    border-right: 1px dashed #ccc; }
+    #lists ul li:hover {
+      background: #f5f4f4; }
+    #lists ul li p {
+      width: 160px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap; }
+      #lists ul li p:hover {
+        color: #d80808; }
+    #lists ul li span {
+      display: block; }
+      #lists ul li span b {
+        color: #ababab; }
+      #lists ul li span i {
+        color: #a10000; }

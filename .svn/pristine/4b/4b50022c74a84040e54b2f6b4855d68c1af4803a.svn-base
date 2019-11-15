@@ -1,0 +1,197 @@
+.margin{
+    margin:0 auto;
+    width: 1200px;
+}
+/* 头部 */
+#header {
+    width: 1200px;
+    height:102px;
+    overflow: hidden;
+}
+/* 顶导航 */
+#header .topNav{
+    margin-top:5px;
+    font: 12px/19px "宋体";
+    float: right;
+}
+#header  .topcolor a{
+    color:#8f0100;
+}
+#header .topNav i img{
+    width:15px;
+    display: inline-block;
+    height:15px;
+    margin:0 3px 2px 0;
+}
+#header .topNav .carst{
+    display: inline-block;
+    position: relative;
+}
+#carnum{
+    font: 16px/20px "酷黑软雅";
+    font-weight: 400;
+    color: #ce0707;
+}
+
+
+/* 子菜单 */
+#header .logo{
+    float: left;
+}
+#header .logo img{
+    margin-top:10px;
+    margin-left: 8px;
+}
+#header .dipa{
+    float: left;
+    width: 240px;
+    height: 78px;
+    text-align: center;
+    line-height: 78px;
+}
+#header .search{
+    float: left;
+    display: flex;
+    margin-top:25px;
+    margin-left:20px;
+}
+#header .search .searchTxt{
+    width: 340px;
+    height: 33px;
+    border: 1px solid #f88e04;
+    font: 14px/33px "宋体";
+    color: #000;
+    text-indent: 12px;
+    outline:medium;
+}
+#header .search .searchbox{
+    width: 106px;
+    height: 35px;
+    font: 20px/33x "宋体";
+    color: #fff;
+    background: #f88e04;
+    border: none;
+    cursor: pointer;
+}
+#header .quality{
+    float: left;
+    margin-top:25px;
+    margin-left:40px;
+}
+#header .quality img{
+
+    text-align: center;
+    line-height: 78px;
+}
+/* 导航栏 */
+#nav{
+    overflow: hidden;
+    width: 100%;
+    height:36px;
+    background: url(../images/indeximg/navbg.jpg) repeat-x ;
+}
+#nav .list{
+    width: 200px;
+    height:36px;
+    font: 15px/36px "宋体";
+    text-align: center;
+    float: left;
+    background: rgb(226, 5, 5);
+    color: #fff;
+}
+#nav ul{
+    padding-top: 3px;
+    padding-left: 203px;
+    background:url(../images/indeximg/);
+}
+#nav ul li{
+    height:33px;
+    float: left;
+    font: 12px/36px "宋体";
+    padding:0 16px;
+    background: url(../images/indeximg/border.gif) no-repeat right;
+}
+#nav ul li a{
+    color:#fff;
+}
+#nav ul li.actives{
+    background: #6A0000;
+}
+#nav ul li:hover{
+    background: #6A0000;
+}
+/* 指南 新手上路 */
+#guild{
+    overflow: hidden;
+    width:1200px;
+    height:215px;
+    border: 1px solid #f6f3ed;
+    margin:10px auto 0;
+}
+#guild dl{
+    padding: 20px 0 0 88px;
+    float: left;
+}
+#guild dl:nth-child(1){
+    padding: 20px 0 0 35px;
+    float: left;
+}
+#guild dl dt{
+    font: 18px/30px "宋体";
+    color: #000;
+    font-weight: 700;
+}
+#guild dl dd{
+    font: 12px/30px "宋体";
+}
+#guild dl dd a{
+    color:#464646
+    
+}
+#guild dl dd:hover a{
+    color: rgb(173, 6, 6);
+}
+#guild .weixin{
+    float: left;
+    margin-top: 10px;
+    margin-left: 120px;
+    padding-top: 30px;
+    width: 439px;
+    height: 189px;
+    background: url(../images/indeximg/weixin.gif) no-repeat;
+}
+
+/* 关于我们 */
+#aboutus{
+    text-align: center;
+    overflow: hidden;
+    width: 1200px;
+    margin:0 auto;
+    background: #730301;
+    margin-top:10px;
+}
+#aboutus span a{
+    font: 12px/22px "宋体";
+    color:#fff;
+    margin-right: 10px;
+}
+/* 更多 */
+#more{
+    width:1200px;
+    margin:0 auto; 
+}
+#more a{
+   color: #AEAEAE;
+   margin-right: 8px;
+   font: 12px/22px "宋体";
+}
+ /* 页脚 */
+#footer{
+    margin: 0 auto;
+    width:1200px;
+    text-align: center;
+}
+#footer a{
+    color:#000;
+   font: 12px/18px "宋体";
+}

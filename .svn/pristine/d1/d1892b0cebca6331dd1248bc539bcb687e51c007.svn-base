@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>一九在线</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/sans/public.css">
+    <link rel="stylesheet" href="../css/details.css">
+
+</head>
+
+<body>
+    <!-- 头部 -->
+    <header id="header">
+    </header>
+    <!-- 导航栏 -->
+    <nav id="nav">
+    </nav>
+
+    <div id="details">
+        
+    </div>
+    <!-- 指南 新手上路 -->
+    <div id="guild">
+    </div>
+    <!-- 关于我们 -->
+    <div id="aboutus">
+    </div>
+    <!-- 更多 -->
+    <div id="more">
+    </div>
+    <!-- 页脚 -->
+    <footer id="footer">
+    </footer>
+</body>
+<script src="../js/sans/jquery.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/details.js"></script>
+
+</html>

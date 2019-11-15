@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>一九在线</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/sans/public.css">
+    <link rel="stylesheet" href="../css/login.css">
+
+</head>
+
+<body>
+    <!-- 头部 -->
+    <header id="header">
+    </header>
+    <!-- 导航栏 -->
+    <nav id="nav" >
+    </nav>
+    <!-- 注册/登录 -->
+    <div id="loginbar">
+        <div class="margin">
+        <!-- 登录 -->
+        <div class="loginbg">
+            <div class="login">
+                <div class="login-t">用户登录</div>
+                <div class="login-c">
+                    <div class="user login1">
+                            <div class="userimg login2"><img src="../images/loginimg/user.png" alt=""></div>
+                            <input type="text"  placeholder="用户名" id="name" autocomplete="off" >
+                            <span class="name1"></span>
+                    </div>
+                    <div class="pass login1">
+                            <div class="passimg login2"><img src="../images/loginimg/pass.png" alt=""></div>
+                            <input type="password" placeholder="请输入密码" id="pass" value="">
+                            <span class="pass111"></span>
+                    </div>
+                    <button id="but">登录</button>
+                    <div class="forget">
+                        <span class="forget-l"><a href="">忘记密码？</a></span>
+                        <span class="forget-r"><a href="./regsiter.html">免费注册</a></span>
+                    </div>
+                </div>
+                <div class="login-b">
+                    <span>第三方登录:<a href="">微博</a><i>|</i><a href="">微信</a></span>
+                </div>
+            </div>
+
+        </div>
+        </div>
+    </div>
+    <!-- 指南 新手上路 -->
+    <div id="guild">
+    </div>
+    <!-- 关于我们 -->
+    <div id="aboutus">
+    </div>
+    <!-- 更多 -->
+    <div id="more">
+    </div>
+    <!-- 页脚 -->
+    <footer id="footer">
+    </footer>
+</body>
+<script src="../js/sans/jquery.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/index.js"></script>
+<script src="../js/login.js"></script>
+
+</html>

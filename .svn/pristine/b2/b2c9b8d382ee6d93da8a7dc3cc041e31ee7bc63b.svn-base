@@ -1,0 +1,301 @@
+#details{
+    overflow: hidden;
+}
+#details .details-t .place{width:100%}
+#details .details-t .place p{font:12px/30px "酷软雅黑";color:#454545;}
+#details .details-t .place p a{font:12px/30px "酷软雅黑";color:#464646;}
+#details .details-t .place p a:hover{font:12px/30px "酷软雅黑";color:#750202;}
+/* 放大镜 */
+#magnifying{
+    width: 1084px;
+    height:530px;
+    float: left;
+    background: #fff;
+}
+#magnifying .magnifying-l{
+    width:330px;
+    height:480px;
+    position: relative;
+    float: left;
+    
+}
+#magnifying .magnifying-l .lens-big{
+    width:332px; height:402px;
+    position: relative;
+}
+#magnifying .magnifying-l .smell-lens {
+    width:330px; height:400px;border:1px solid #e4e4e4;position: relative;
+}
+#magnifying .magnifying-l .smell-lens img{
+    width:330px; 
+    display:block;
+    height:400px;
+    position: absolute;}
+#magnifying .magnifying-l .lens{
+    width:165px; 
+    height:150px;
+    position: absolute;
+    background: #e9fa00;
+    opacity:.5;
+    display: none;
+}
+#magnifying .magnifying-l .big-lens{
+    border: 1px solid #b4b1b1;
+    position: relative;
+    width:400px; 
+    height:400px;
+    top:-403px;
+    left:335px;
+    overflow: hidden;
+    display: none;
+    z-index: 100;
+}
+
+#magnifying .magnifying-l .big-lens img{
+    position: absolute;
+}
+
+
+/* 放大镜下面小图 */
+#magnifying .magnifying-l .spec-list{
+    position: relative;
+    margin-top:10px;
+    width: 330px;
+    height: 62px;
+}
+#magnifying .magnifying-l .spec-list .specbut{
+    top:10px;
+    position: absolute;
+    width: 5px;
+    height: 45px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    background: url(../images/details/icon_clubs.gif) no-repeat left ;
+    border: none;
+}
+#magnifying .magnifying-l .spec-list .specleft{
+    background-position:-67px -380px;
+    left: 8px;
+}
+#magnifying .magnifying-l .spec-list .specright{
+    right: 8px;
+    background-position: -78px -380px;
+}
+
+#magnifying .magnifying-l .spec-list ul{
+    position: absolute;
+    left:20px;
+}
+#magnifying .magnifying-l .spec-list ul li{
+    text-align: center;
+    float: left;
+    width: 65px;
+    height: 56px;
+    padding: 2px;
+}
+#magnifying .magnifying-l .spec-list ul li img{
+    display: block;
+    width: 56px;
+    height: 56px;
+    border: 1px solid #d8d5d5;
+
+}
+#magnifying .magnifying-l .spec-list ul li img:hover{
+    border-color: #cc0808;
+}
+#magnifying .magnifying-l .refer{
+    margin:5px 0 0 10px;;
+    font:12px/20px "酷软雅黑";
+
+}
+
+/* 放大镜右边 */
+#magnifying .magnifying-r{
+    margin-left: 20px;
+    float: left;
+    overflow: hidden;
+    float: left;
+    width: 730px;
+    height:500px;
+    color: #cc0808;
+}
+#magnifying .magnifying-r .winename{
+    width:720px;
+    padding-left:15px;
+    margin-bottom: 15px;
+    border-bottom:1px solid #DFDFDF;
+    color: #232323;
+}
+#magnifying .magnifying-r .winename h1{
+    float: left;
+    width: 720px;
+    font: 20px/28px "宋体";
+    font-weight: 800;
+    color: #232323;
+}
+#magnifying .magnifying-r .winename  .zo1{
+    color: rgb(200,51,65);
+    font:14px/28px "宋体";
+   font-weight: 700;
+}
+#magnifying .magnifying-r .winename h2{
+    font:12px/18px "";
+    color:  rgb(136,136,136);
+}
+#magnifying .magnifying-r .cost{
+    color: #454545;
+    padding-left: 15px;
+    font: 12px/  "酷软雅黑";
+    margin-top:15px;
+}
+#price{
+    color:#ab0012;
+    font:26px/28px  "酷软雅黑" ;
+    font-weight: 700;
+}
+#price2{
+    text-decoration: line-through;
+}
+
+#magnifying .magnifying-r .cost b{
+    color:#a4a4a4;
+    font:12px  "酷软雅黑" ;
+    padding: 15px 0 0 15px;
+}
+
+#magnifying .magnifying-r .integral{
+    font:12px/20px "酷软雅黑";
+    color:#454545;
+    padding:15px 0 0 15px; 
+}
+#magnifying .magnifying-r .integral .behoof{ margin-left:10px;}
+#magnifying .magnifying-r .integral .behoof:hover{  color:#730301; }
+#magnifying .magnifying-r .integral .login{color:#730301; }
+#magnifying .magnifying-r .quantity{
+    padding: 200px 0 0 15px;
+    margin-bottom: 20px;
+}
+#magnifying .magnifying-r .quantity span{
+    font:12px/20px "酷软雅黑";
+    color:#454545;
+}
+/* 数量加 */
+#magnifying .magnifying-r .but{
+    width:20px;
+    height:18px;
+    background: #DFDFDF;
+    border: 1px solid #cc0808;
+    outline: medium;
+    cursor: pointer;
+}   
+/* 数量 */
+#numde{
+    width: 30px;
+    height:18px;
+}
+/* 立即购买 */
+#promptly{
+    width:162px;
+    height:40px; 
+    background: #f5d3d5;
+    color: #9b0909;
+    border: 1px solid #ff4a4a;
+    font: 16px/30px "酷软雅黑";
+    cursor: pointer;
+    border-radius: 4px;
+    outline: medium;
+}
+#promptly:active{
+    background: #f1757d;
+}
+/* 加入购物车 */
+/* #car img{
+    display: inline-block;
+    width:35px;
+    height:30px;
+    line-height: 30px;
+} */
+#car{
+    width:162px;
+    height:40px; 
+    background: #ff3701;
+    border:1px solid #a4a4a4;
+    border-radius: 4px;
+    font: 16px/30px "酷软雅黑";
+    color:#fff;
+    outline: medium;
+    cursor: pointer;
+    position: relative;
+}
+#car:active{
+    left: 3px;
+    top:3px;
+}
+
+#details .product .correlation{
+    width:106px;
+    height:500px;
+    float:right;
+    margin-top: 10px;
+    overflow: hidden;
+    border: 1px solid #fafafa;
+    background: #fcfcfc;
+    text-align: center;
+}
+#details .product .correlation .correlation-t{
+    font:13px/20px "酷软雅黑";
+    font-weight: 700;
+    color:#a4a4a4;
+}
+#details .product .correlation ul{
+    overflow: hidden;
+}
+#details .product .correlation ul li a{
+    display: block;
+    padding:0 10px;
+    text-align: left;
+    
+
+}
+#details .product .correlation ul li span{
+    font:12px/20px "酷软雅黑";
+    color: #454545;
+}
+#details .product .correlation ul li img{
+    width:82px;
+    text-align:center;
+    display: block;
+border:1px solid #DFDFDF;
+    height:99px;
+
+}
+#details .product .correlation ul li em{
+    display: block;
+    font:12px/30px "酷软雅黑";
+    color: #a10000;
+    font-weight: 700;
+}
+
+#details .details-b .detailsed{
+    width:964px;
+    margin: 0 auto;
+}
+#details .details-b  .details1{
+    margin-top:10px;
+    font:14px/22px "酷软雅黑";
+    color: #730301;
+    font-weight: 700;
+    border-bottom: 3px solid #730301;
+    text-indent: 10px;
+}
+#details .details-b .etails1-b{
+    font:12px/22px "酷软雅黑";
+    color: #454545;
+    text-indent: 25px;
+}
+#details .details-b .details1-b p{
+    margin:10px 0;
+}
+#details .details-b .introduce .introduce-b  img{
+    margin:100px 0 0 100px;
+}

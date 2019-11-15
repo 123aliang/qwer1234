@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>一九在线</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/sans/public.css">
+    <link rel="stylesheet" href="../css/list.css">
+</head>
+
+<body>
+    <!-- 头部 -->
+    <header id="header">
+    </header>
+    <!-- 导航栏 -->
+    <nav id="nav">
+    </nav>
+    <!-- 商品 列表 -->
+    <div id="lectWine">
+        <div class="margin">
+            <!-- 场合分类 -->
+            <div class="classify">
+                <ul>
+                    <li><a href="./list.html">浪漫约会</a></li>
+                    <li><a href="./list.html">结婚喜庆</a></li>
+                    <li><a href="./list.html">商务活动</a></li>
+                    <li><a href="./list.html">开心派对</a></li>
+                    <li><a href="./list.html">家庭自饮</a></li>
+                    <li><a href="./list.html">生日纪念</a></li>
+                </ul>
+            </div>
+            <!-- 商品 -->
+            <div class="list">
+                <div><img src="http://www.19online.cn/UserUpFile/ch_01.jpg" alt=""></div>
+                <div id="lists">
+                    <ul>
+                        <li>
+                            <a href="./details.html" title="布琅兄弟莫斯卡托甜白" target="_blank"><img
+                                    src="http://i.19online.cn/picture/s_1751720180821164208.jpg" alt="">
+                                <p>布琅兄弟莫斯卡托甜白</p>
+                            </a>
+                            <span>零售价:<b>￥188</b> </span>
+                            <span>会员价:<i>￥128</i></span>
+                        </li>
+                        <li>
+                            <a href="details.html" title="布琅兄弟莫斯卡托甜白" target="_blank"><img
+                                    src="http://i.19online.cn/picture/s_1647320161128113908.jpg" alt="">
+                                <p>布琅兄弟莫斯卡托甜白</p>
+                            </a>
+                            <span>零售价:<b>￥188</b></span>
+                            <span>会员价:<i>￥128</i></span>
+                        </li>
+                        <li>
+                            <a href="./details.html" title="布琅兄弟莫斯卡托甜白" target="_blank"><img
+                                    src="http://i.19online.cn/picture/s_1547020150105180238.jpg" alt="">
+                                <p>布琅兄弟莫斯卡托甜白</p>
+                            </a>
+                            <span>零售价:<b>￥188</b> </span>
+                            <span>会员价:<i>￥128</i></span>
+                        </li>
+                        <li>
+                            <a href="./details.html" title="布琅兄弟莫斯卡托甜白" target="_blank"><img
+                                    src="http://i.19online.cn/picture/s_830820120518162354.jpg" alt="">
+                                <p>布琅兄弟莫斯卡托甜白</p>
+                            </a>
+                            <span>零售价:<b>￥188</b> </span>
+                            <span>会员价:<i>￥128</i></span>
+                        </li>
+                        <li>
+                            <a href="#" title="布琅兄弟莫斯卡托甜白" target="_blank"><img
+                                    src="http://i.19online.cn/picture/s_830420120518161830.jpg" alt="">
+                                <p>布琅兄弟莫斯卡托甜白</p>
+                            </a>
+                            <span>零售价:<b>￥188</b> </span>
+                            <span>会员价:<i>￥128</i></span>
+                        </li>
+                        <li>
+                            <a href="#" title="布琅兄弟莫斯卡托甜白" target="_blank"><img
+                                    src="http://i.19online.cn/picture/s_1831820191012150242.jpg" alt="">
+                                <p>布琅兄弟莫斯卡托甜白</p>
+                            </a>
+                            <span>零售价:<b>￥188</b> </span>
+                            <span>会员价:<i>￥128</i></span>
+                        </li>
+                        <li>
+                            <a href="#" title="布琅兄弟莫斯卡托甜白" target="_blank"><img
+                                    src="http://i.19online.cn/picture/s_1831820191012150242.jpg" alt="">
+                                <p>布琅兄弟莫斯卡托甜白</p>
+                            </a>
+                            <span>零售价:<b>￥188</b> </span>
+                            <span>会员价:<i>￥128</i></span>
+                        </li>
+                        <li>
+                            <a href="#" title="布琅兄弟莫斯卡托甜白" target="_blank"><img
+                                    src="http://i.19online.cn/picture/s_1831820191012150242.jpg" alt="">
+                                <p>布琅兄弟莫斯卡托甜白</p>
+                            </a>
+                            <span>零售价:<b>￥188</b> </span>
+                            <span>会员价:<i>￥128</i></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 指南 新手上路 -->
+    <div id="guild">
+    </div>
+    <!-- 关于我们 -->
+    <div id="aboutus">
+    </div>
+    <!-- 更多 -->
+    <div id="more">
+    </div>
+    <!-- 页脚 -->
+    <footer id="footer">
+    </footer>
+</body>
+<script src="../js/sans/jquery.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/list.js"></script>
+
+
+</html>

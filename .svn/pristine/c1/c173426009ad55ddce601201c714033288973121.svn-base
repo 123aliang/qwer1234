@@ -1,0 +1,74 @@
+#lectWine {
+    overflow: hidden;
+    margin-top: 10px;
+    .classify {
+      margin-top: 10px;
+      width: 223px;
+      border: 1px solid #dbdbdb;
+      border-top: 2px solid #730301;
+      float: left;
+      ul {
+        width: 100%;
+        li {
+          width: 100%;
+          font: 13px/28px "宋体";
+          font-weight: 700;
+          background: #fbfbfb;
+          border-bottom: 1px solid #e8e8e8;
+          text-indent: 10px;
+          a {
+            color: #333;
+            &:hover {
+              color: rgb(255, 0, 0);
+            }
+          }
+        }
+      }
+    }
+    .list {
+      width: 920px;
+      margin-left: 5px;
+      float: left;
+    }
+  }
+  /* 商品 */
+  #lists {
+    width: 910px;
+    overflow: hidden;
+    ul {
+      li {
+        float: left;
+        text-align: left;
+        font: 12px/18px "宋体";
+        color: #444;
+        margin-top: 10px;
+        padding: 12px 0 0 14px;
+        width: 166PX;
+        height: 259PX;
+        border-bottom: 1px dashed #ccc;
+        border-right: 1px dashed #ccc;
+        &:hover {
+          background: #f5f4f4;
+        }
+        p {
+          width: 160px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          &:hover {
+            color: rgb(216, 8, 8);
+          }
+        }
+        span {
+          display: block;
+          b {
+            color: #ababab;
+          }
+          i {
+            color: #a10000;
+          }
+        }
+      }
+    }
+  }
+  
